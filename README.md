@@ -63,7 +63,7 @@ Alur ini mendemonstrasikan bagaimana data mengalir dari input pengguna melalui b
 
 ## Screenshot
 
-Contoh tampilan form dan hasil data yang telah disimpan:
-
-![Lampiran Form](./form.png)
-![Lampiran Hasil](./hasil.png)
+<div style="display: flex; justify-content: space-between;">
+  <img src="./form.png" alt="Lampiran Form" style="width: 48%;"/>
+  <img src="./hasil.png" alt="Lampiran Hasil" style="width: 48%;"/>
+</div>
