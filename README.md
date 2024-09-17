@@ -64,5 +64,5 @@ Alur ini mendemonstrasikan bagaimana data mengalir dari input pengguna melalui b
 ## Screenshot
 
 Contoh :
-![Lampiran Form](form.png)
-![Lampiran Hasil](hasil.png)
+![Lampiran Form] (form.png)
+![Lampiran Hasil] (hasil.png)
