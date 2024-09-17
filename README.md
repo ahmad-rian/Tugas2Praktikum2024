@@ -1,23 +1,68 @@
 # Tugas Pertemuan 2
 
-Fork dan clone repository ini, lalu jalankan perintah 
-```
-flutter pub get
-```
-Buatlah tampilan form yang berisi nama, nim, dan tahun lahir pada file `ui/form_data.dart`, lalu buatlah tampilan hasil dari input data tersebut pada file `ui/tampil_data.dart`
+Nama: **Ahmad Rian Syaifullah Ritonga**  
+NIM: **H1D022010**  
+Shift Baru: **D**
 
-JELASKAN PROSES PASSING DATA DARI FORM MENUJU TAMPILAN DENGAN FILE `README.md`
+Pada tugas pertemuan kali ini, akan dijelaskan proses passing data dari form menuju tampilan Perkenalan dalam aplikasi Flutter. Berikut adalah langkah-langkahnya:
 
-Buat tampilan semenarik mungkin untuk dilihat.
+## 1. Pengisian Form (FormData Widget)
 
+- Pengguna membuka aplikasi dan melihat form input pada halaman pertama.
+- Pengguna mengisi data di form, termasuk:
+  - Nama
+  - NIM
+  - Tahun Kelahiran
+  - Alamat
+  - Prodi
+  - Angkatan
 
-Nama : ___
+## 2. Validasi dan Pengiriman Data
 
-NIM : ___
+- Ketika pengguna menekan tombol **"Simpan"**:
+  - Form melakukan validasi untuk memastikan semua field terisi dengan benar.
+  - Jika valid, method `_submitForm()` dipanggil.
+  - `_submitForm()` memanggil callback `onSimpan` yang diberikan oleh **MainScreen**, mengirimkan semua data form.
 
-Shift Baru: ___
+## 3. Penerimaan Data di MainScreen
+
+- **MainScreen** menerima data melalui method `_onSimpan`.
+- Di dalam `_onSimpan`, state **MainScreen** diperbarui dengan data baru menggunakan `setState()`.
+- Setelah memperbarui state, **MainScreen** mengubah indeks tampilan ke **TampilData**.
+
+## 4. Pembaruan Tampilan
+
+- Karena state telah berubah, Flutter memicu rebuild pada widget tree.
+- `IndexedStack` di **MainScreen** sekarang menampilkan **TampilData** widget.
+
+## 5. Menampilkan Data (TampilData Widget)
+
+- **TampilData** widget menerima data baru sebagai props dari **MainScreen**.
+- **TampilData** membangun tampilan berdasarkan data yang diterima.
+- Informasi yang ditampilkan meliputi:
+  - Nama
+  - NIM
+  - Umur (dihitung dari tahun kelahiran)
+  - Alamat
+  - Prodi
+  - Angkatan
+
+## 6. Interaksi Pengguna
+
+- Pengguna dapat melihat data yang telah diinput pada layar **"Perkenalan"**.
+- Pengguna dapat beralih kembali ke form input menggunakan bottom navigation bar jika ingin mengubah data.
+
+## 7. Alur Kembali
+
+- Jika pengguna kembali ke form input, data sebelumnya masih tersimpan di state **MainScreen**.
+- Pengguna dapat mengubah data dan menyimpannya kembali, yang akan memperbarui tampilan **TampilData**.
+
+---
+
+Alur ini mendemonstrasikan bagaimana data mengalir dari input pengguna melalui berbagai komponen aplikasi (**FormData** -> **MainScreen** -> **TampilData**) menggunakan state management dan props passing dalam Flutter.
 
 ## Screenshot
+
 Contoh :
 ![Lampiran Form](form.png)
 ![Lampiran Hasil](hasil.png)
